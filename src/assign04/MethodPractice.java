@@ -155,23 +155,21 @@ public class MethodPractice {
                 + "Expecting a result of 8. The actual result is "
                 + centimetersToInches(20.5) + ".");
 
-        // Add a new normal case.
+        // New
         System.out.println("Checking centimetersToInches(2.54). "
                 + "Expecting a result of 1. The actual result is "
                 + centimetersToInches(2.54) + ".");
 
-        // Add another new normal Case
+        // New
         System.out.println("Checking centimetersToInches(25.4). "
                 + "Expecting a result of 10. The actual result is "
                 + centimetersToInches(25.4) + ".");
 
-        // Add an edge case.
+        // New
         System.out.println("Checking centimetersToInches(0). "
                 + "Expecting a result of 0. The actual result is "
                 + centimetersToInches(0) + ".");
 
-
-        // shiftCipher checks
         // shiftCipher checks
 
         // Provided
