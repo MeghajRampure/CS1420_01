@@ -1,7 +1,6 @@
 package Notes;
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
+
 
 public class PositiveIntegers {
     private int [] data;
@@ -20,7 +19,7 @@ public class PositiveIntegers {
         if(value <= 0){
             throw new IllegalArgumentException("Value must be postive.");
         }
-        if(index >= 0){
+        if(index < 0 || index >= 0){
             throw new IllegalArgumentException("Index must be in range.");
         }
         this.data[index] = value;
