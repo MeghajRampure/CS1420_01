@@ -77,5 +77,91 @@ public class MonthTest {
 	// Student-supplied tests
 	// -------------------------------------------------------------------------
 
-	// TO DO: Add more unit tests HERE to completely and robustly check the Month class.
+	@Test
+	public void testParameterizedConstructor() {
+		Month month = new Month(7);
+		assertEquals(7, month.getMonthNumber());
+	}
+
+	@Test
+	public void testLastDayJanuary() {
+		Month month = new Month(1);
+		assertEquals(31, month.lastDay(false));
+	}
+
+	@Test
+	public void testLastDayFebruaryNonLeapYear() {
+		Month month = new Month(2);
+		assertEquals(28, month.lastDay(false));
+	}
+
+	@Test
+	public void testLastDayJune() {
+		Month month = new Month(6);
+		assertEquals(30, month.lastDay(false));
+	}
+
+	@Test
+	public void testLastDayDecember() {
+		Month month = new Month(12);
+		assertEquals(31, month.lastDay(false));
+	}
+
+	@Test
+	public void testValidDayFirstDay() {
+		Month month = new Month(1);
+		assertTrue(month.validDay(1, false));
+	}
+
+	@Test
+	public void testValidDayLastDay() {
+		Month month = new Month(4);
+		assertTrue(month.validDay(30, false));
+	}
+
+	@Test
+	public void testInvalidDayZero() {
+		Month month = new Month(4);
+		assertFalse(month.validDay(0, false));
+	}
+
+	@Test
+	public void testInvalidDayTooLarge() {
+		Month month = new Month(4);
+		assertFalse(month.validDay(31, false));
+	}
+
+	@Test
+	public void testFebruaryInvalidDayNonLeapYear() {
+		Month month = new Month(2);
+		assertFalse(month.validDay(29, false));
+	}
+
+	@Test
+	public void testFebruaryInvalidDayLeapYear() {
+		Month month = new Month(2);
+		assertFalse(month.validDay(30, true));
+	}
+
+	@Test
+	public void testToStringJanuary() {
+		assertEquals("January",
+				new Month(1).toString());
+	}
+
+	@Test
+	public void testToStringDecember() {
+		assertEquals("December",
+				new Month(12).toString());
+	}
+
+	@Test
+	public void testEqualsTrue() {
+		assertTrue(new Month(5).
+				equals(new Month(5)));
+	}
+
+
+
+
 }

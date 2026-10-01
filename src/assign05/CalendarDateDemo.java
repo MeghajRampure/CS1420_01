@@ -10,6 +10,26 @@ package assign05;
  * @version Sep 29 2026
  */
 public class CalendarDateDemo {
+
+	/**
+	 * Counts the number of dates in an array coming before target array
+	 *
+	 * @param dates the array of dates to check
+	 * @param target the date to compare against
+	 * @return the number of dates that come before the target
+	 */
+	public static int countDatesBefore(CalendarDate[] dates, CalendarDate target) {
+		int count = 0;
+
+		for (CalendarDate date : dates) {
+			if (date.comesBefore(target)) {
+				count++;
+			}
+		}
+
+		return count;
+	}
+
 	public static void main(String[] args) {
 		CalendarDate lastDayOfClass = new CalendarDate(12, 9, 2026);
 		CalendarDate finalExamDate = new CalendarDate(12, 15, 2026);
@@ -59,9 +79,7 @@ public class CalendarDateDemo {
 		classMeetings[26] = new CalendarDate(9, 9, 2026);
 		classMeetings[27] = new CalendarDate(12, 2, 2026);
 	
-		// Uncomment print statement after defining the countDatesBefore method.
-		/* System.out.println("There are " + countDatesBefore(classMeetings, new CalendarDate(10, 21, 2026)) +
-				" class meetings before the midterm exam."); */
-		// Expected output: There are 14 class meetings before the midterm exam.
+		System.out.println("There are " + countDatesBefore(classMeetings, new CalendarDate(10, 21, 2026)) +
+				" class meetings before the midterm exam.");
 	}
 }
