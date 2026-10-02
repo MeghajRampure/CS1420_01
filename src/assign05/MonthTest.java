@@ -185,4 +185,22 @@ public class MonthTest {
 		assertTrue(month.equals(new Month(5)));
 	}
 
+	@Test
+	public void testLastDayJanuary() {
+		Month month = new Month(1);
+		assertEquals(31, month.lastDay(false));
+	}
+
+	@Test
+	public void testLastDayJune() {
+		Month month = new Month(6);
+		assertEquals(30, month.lastDay(false));
+	}
+
+	@Test
+	public void testLastDayDecember() {
+		Month month = new Month(12);
+		assertEquals(31, month.lastDay(false));
+	}
+
 }
