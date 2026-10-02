@@ -1,5 +1,12 @@
 package assign05;
 
+/**
+ * Represents 1 of the 12 months
+ *
+ * @author CS 1420 course staff and Meghaj Rampure
+ * @version Oct 1 2026
+ */
+
 public class Month {
 
     private int monthNumber;

@@ -78,33 +78,39 @@ public class MonthTest {
 	// -------------------------------------------------------------------------
 
 	@Test
-	public void testParameterizedConstructor() {
-		Month month = new Month(7);
-		assertEquals(7, month.getMonthNumber());
-	}
-
-	@Test
-	public void testLastDayJanuary() {
-		Month month = new Month(1);
+	public void testLastDayMarch() {
+		Month month = new Month(3);
 		assertEquals(31, month.lastDay(false));
 	}
 
 	@Test
-	public void testLastDayFebruaryNonLeapYear() {
-		Month month = new Month(2);
-		assertEquals(28, month.lastDay(false));
+	public void testLastDayJuly() {
+		Month month = new Month(7);
+		assertEquals(31, month.lastDay(false));
 	}
 
 	@Test
-	public void testLastDayJune() {
-		Month month = new Month(6);
+	public void testLastDayAugust() {
+		Month month = new Month(8);
+		assertEquals(31, month.lastDay(false));
+	}
+
+	@Test
+	public void testLastDaySeptember() {
+		Month month = new Month(9);
 		assertEquals(30, month.lastDay(false));
 	}
 
 	@Test
-	public void testLastDayDecember() {
-		Month month = new Month(12);
+	public void testLastDayOctober() {
+		Month month = new Month(10);
 		assertEquals(31, month.lastDay(false));
+	}
+
+	@Test
+	public void testLastDayNovember() {
+		Month month = new Month(11);
+		assertEquals(30, month.lastDay(false));
 	}
 
 	@Test
@@ -120,48 +126,63 @@ public class MonthTest {
 	}
 
 	@Test
-	public void testInvalidDayZero() {
+	public void testValidDayZero() {
 		Month month = new Month(4);
 		assertFalse(month.validDay(0, false));
 	}
 
 	@Test
-	public void testInvalidDayTooLarge() {
+	public void testValidDayTooLarge() {
 		Month month = new Month(4);
 		assertFalse(month.validDay(31, false));
 	}
 
 	@Test
-	public void testFebruaryInvalidDayNonLeapYear() {
+	public void testValidDayFebruaryNonLeapYear() {
 		Month month = new Month(2);
 		assertFalse(month.validDay(29, false));
 	}
 
 	@Test
-	public void testFebruaryInvalidDayLeapYear() {
-		Month month = new Month(2);
-		assertFalse(month.validDay(30, true));
+	public void testValidDayJanuary31() {
+		Month month = new Month(1);
+		assertTrue(month.validDay(31, false));
+	}
+
+	@Test
+	public void testInvalidDayJanuary32() {
+		Month month = new Month(1);
+		assertFalse(month.validDay(32, false));
 	}
 
 	@Test
 	public void testToStringJanuary() {
-		assertEquals("January",
-				new Month(1).toString());
+		Month month = new Month(1);
+		assertEquals("January", month.toString());
 	}
 
 	@Test
 	public void testToStringDecember() {
-		assertEquals("December",
-				new Month(12).toString());
+		Month month = new Month(12);
+		assertEquals("December", month.toString());
+	}
+
+	@Test
+	public void testToStringFebruary() {
+		Month month = new Month(2);
+		assertEquals("February", month.toString());
+	}
+
+	@Test
+	public void testToStringJuly() {
+		Month month = new Month(7);
+		assertEquals("July", month.toString());
 	}
 
 	@Test
 	public void testEqualsTrue() {
-		assertTrue(new Month(5).
-				equals(new Month(5)));
+		Month month = new Month(5);
+		assertTrue(month.equals(new Month(5)));
 	}
-
-
-
 
 }
