@@ -30,7 +30,7 @@ public class WordTest {
 		Word normal = new Word("Normal");
 		assertEquals("Normal", normal.toString());
 	}
-	
+	// New
 	@Test
 	public void testForEmptyWord(){
 		Word empty = new Word("");
@@ -51,20 +51,20 @@ public class WordTest {
 		Word multiplePs = new Word("saippuakivikauppias");
 		assertEquals(4, multiplePs.countOccurrences('p'));
 	}
-
+	// New
 	@Test
 	public void testCountOccurrencesNotFound() {
 		Word word = new Word("hello");
 		assertEquals(0, word.countOccurrences('z'));
 	}
-
+	// New
 	@Test
 	public void testCountOccurrencesCaseSensitive() {
 		Word word = new Word("HeLLo");
 		assertEquals(2, word.countOccurrences('L'));
 		assertEquals(0, word.countOccurrences('l'));
 	}
-
+	// New
 	@Test
 	public void testCountOccurrencesDoesNotChangeWord() {
 		Word word = new Word("banana");
@@ -86,21 +86,21 @@ public class WordTest {
 		hello.replaceLastOccurrence('l', 's');
 		assertEquals("helso", hello.toString());
 	}
-
+	// New
 	@Test
 	public void testReplaceLastOccurrenceNotFound() {
 		Word word = new Word("hello");
 		word.replaceLastOccurrence('z', 'a');
 		assertEquals("hello", word.toString());
 	}
-
+	// New
 	@Test
 	public void testReplaceLastOccurrenceFirstCharacter() {
 		Word word = new Word("apple");
 		word.replaceLastOccurrence('a', 'o');
 		assertEquals("opple", word.toString());
 	}
-
+	// New
 	@Test
 	public void testReplaceLastOccurrenceReplacementInvalid() {
 		Word word = new Word("hello");
@@ -123,33 +123,28 @@ public class WordTest {
 		Word empty = new Word("");
 		assertEquals("", empty.reverse().toString());
 	}
+	// New
 	@Test
 	public void testReverseOneLetter() {
 		Word word = new Word("a");
 		assertEquals("a", word.reverse().toString());
 	}
-
+	// New
 	@Test
 	public void testReverseEvenLength() {
 		Word word = new Word("abcd");
 		assertEquals("dcba", word.reverse().toString());
 	}
+	// New
 	@Test
 	public void testReverseOddLength() {
 		Word word = new Word("abc");
 		assertEquals("cba", word.reverse().toString());
 	}
+	// New
 	@Test
 	public void testReverseMixedCase() {
 		Word word = new Word("AbC");
 		assertEquals("CbA", word.reverse().toString());
 	}
-
-
-
-
-
-
-
-	// TODO: Write at least three more tests for reverse, considering cases untested by provided tests.
 }
