@@ -31,10 +31,13 @@ public class WordTest {
 		assertEquals("Normal", normal.toString());
 	}
 	
-	// TODO: Write at least one more test for the constructor and toString, considering edge cases.
-	
-	// TODO: Uncomment in Step 4 to test countOccurrences.
-	/*
+	@Test
+	public void testForEmptyWord(){
+		Word empty = new Word("");
+		assertEquals("", empty.toString());
+
+	}
+
 	// Provided
 	@Test
 	public void testCountOccurrencesOneLetter() {		
@@ -48,12 +51,27 @@ public class WordTest {
 		Word multiplePs = new Word("saippuakivikauppias");
 		assertEquals(4, multiplePs.countOccurrences('p'));
 	}
-	*/
-	
-	// TODO: Write at least three more tests for countOccurrences, especially edge cases, exceptions, and how to ensure the method does not change object state.
 
-	// TODO: Uncomment in Step 6 to test replaceLastOccurrence.
-	/*
+	@Test
+	public void testCountOccurrencesNotFound() {
+		Word word = new Word("hello");
+		assertEquals(0, word.countOccurrences('z'));
+	}
+
+	@Test
+	public void testCountOccurrencesCaseSensitive() {
+		Word word = new Word("HeLLo");
+		assertEquals(2, word.countOccurrences('L'));
+		assertEquals(0, word.countOccurrences('l'));
+	}
+
+	@Test
+	public void testCountOccurrencesDoesNotChangeWord() {
+		Word word = new Word("banana");
+		word.countOccurrences('a');
+		assertEquals("banana", word.toString());
+	}
+
 	// Provided
 	@Test
 	public void testReplaceLastOccurrenceExceptionFirstArgument() {
@@ -68,12 +86,30 @@ public class WordTest {
 		hello.replaceLastOccurrence('l', 's');
 		assertEquals("helso", hello.toString());
 	}
-	*/
-	
-	// TODO: Write at least three more tests for replaceLastOccurrence, considering cases untested by provided tests.
 
-	// TODO: Uncomment in Step 8 to test reverse.
-	/*
+	@Test
+	public void testReplaceLastOccurrenceNotFound() {
+		Word word = new Word("hello");
+		word.replaceLastOccurrence('z', 'a');
+		assertEquals("hello", word.toString());
+	}
+
+	@Test
+	public void testReplaceLastOccurrenceFirstCharacter() {
+		Word word = new Word("apple");
+		word.replaceLastOccurrence('a', 'o');
+		assertEquals("opple", word.toString());
+	}
+
+	@Test
+	public void testReplaceLastOccurrenceReplacementInvalid() {
+		Word word = new Word("hello");
+		assertThrows(IllegalArgumentException.class,
+				() -> word.replaceLastOccurrence('l', '?'));
+		assertEquals("hello", word.toString());
+	}
+
+
 	// Provided
 	@Test
 	public void testReverseHello() {
@@ -87,7 +123,33 @@ public class WordTest {
 		Word empty = new Word("");
 		assertEquals("", empty.reverse().toString());
 	}
-	*/
-	
+	@Test
+	public void testReverseOneLetter() {
+		Word word = new Word("a");
+		assertEquals("a", word.reverse().toString());
+	}
+
+	@Test
+	public void testReverseEvenLength() {
+		Word word = new Word("abcd");
+		assertEquals("dcba", word.reverse().toString());
+	}
+	@Test
+	public void testReverseOddLength() {
+		Word word = new Word("abc");
+		assertEquals("cba", word.reverse().toString());
+	}
+	@Test
+	public void testReverseMixedCase() {
+		Word word = new Word("AbC");
+		assertEquals("CbA", word.reverse().toString());
+	}
+
+
+
+
+
+
+
 	// TODO: Write at least three more tests for reverse, considering cases untested by provided tests.
 }
