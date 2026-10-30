@@ -4,7 +4,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * Runs the CandidateSearchApplication using command line arguments.
+ * Searches for a candidate by their name and age
+ *
+ * @author Meghaj Rampure
+ * @version 10/29/26
+ */
+
 public class CandidateSearchApplication {
+    /**
+     *  Reads for the candidate file and searches it,
+     *  If not found, then a message is printed
+     *
+     * @param args filepath, name, age
+     */
     public static void main(String[] args) {
 
         if (args.length < 3) {

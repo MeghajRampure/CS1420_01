@@ -1,5 +1,12 @@
 package assign07;
 
+/**
+ * Runs all necessary tests for the Candidate class
+ *
+ * @author Meghaj Rampure
+ * @version 10/29/26
+ */
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -4,8 +4,8 @@ package assign07;
  * This represents a candidate for a job opening.
  * Candidates have a name, age, and a rating (1-10) based on their application.
  * 
- * @author CS 1420 course staff and UPDATE WITH YOUR NAME
- * @version UPDATE WITH MOST RECENT DATE
+ * @author CS 1420 course staff and Meghaj Rampure
+ * @version 10/29/26
  */
 public class Candidate implements Comparable<Candidate>{
 	private String name;

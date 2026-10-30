@@ -1,5 +1,12 @@
 package assign07;
 
+/**
+ * Runs all of the tests for CandidateSearch
+ *
+ * @author Meghaj Rampure
+ * @veriosn 10/29/26
+ */
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
