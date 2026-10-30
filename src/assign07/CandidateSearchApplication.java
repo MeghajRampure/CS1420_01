@@ -58,7 +58,7 @@ public class CandidateSearchApplication {
         Candidate result = CandidateSearch.binarySearch(candidates, target);
 
         if(result != null) {
-            System.out.println(result + "has rating " + result.getRating());
+            System.out.println(result + "has rating " + result.getRating() + ".");
         } else {
             System.out.println(target + " was not found.");
         }
