@@ -1,16 +1,18 @@
+
 package assign09;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
+
 /**
- * Song Tests for the Song class.
+ * Tests for the Song class.
  *
  * @author CS 1420 course staff and Meghaj Rampure
  * @version November 12, 2026
  */
-
 public class SongTest {
+
 
     @Test
     public void testAddNoteEvent() {
